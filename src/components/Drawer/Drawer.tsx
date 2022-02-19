@@ -1,8 +1,10 @@
-import { List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from "@mui/material";
+import { List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
 import { DrawerStore } from "../../store/DrawerStore";
+import CasinoIcon from '@mui/icons-material/Casino';
+import GamesIcon from '@mui/icons-material/Games';
 export const drawerWidth = 200;
 
 const useStyles = makeStyles(() => {
@@ -30,8 +32,8 @@ const useStyles = makeStyles(() => {
 })
 
 const menuItems = [
-	{ text: 'Card game 1', path: routes.cardWar },
-	{ text: 'Card game 2', path: routes.poker },
+	{ text: 'Card wars', path: routes.cardWar, icon: <GamesIcon /> },
+	{ text: 'Poker', path: routes.poker, icon: <CasinoIcon /> },
 ]
 
 const LayoutDrawer = () => {
@@ -52,6 +54,11 @@ const LayoutDrawer = () => {
 			variant="persistent"
 			anchor="left"
 			classes={{ paper: classes.drawerPaper }}>
+			<Typography component="h1" variant="h4"
+				sx={{ borderBottom: "2px solid blue", paddingBottom: "10px" }}
+			>
+				Pick a game
+			</Typography>
 			<List>
 				{menuItems.map((item) => (
 					<ListItem
@@ -59,7 +66,7 @@ const LayoutDrawer = () => {
 						button
 						key={item.text}
 						className={classes.item}>
-						<ListItemIcon>icon</ListItemIcon>
+						<ListItemIcon>{item.icon}</ListItemIcon>
 						<ListItemText primary={item.text} />
 					</ListItem>
 				))}

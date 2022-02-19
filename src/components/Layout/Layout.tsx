@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import { FC } from 'react';
 import Appbar from '../../components/Appbar/Appbar';
-import Footer from '../Footer.tsx/Footer';
+import Footer from '../Footer/Footer';
 
 const useStyles = makeStyles(() => {
 	return {

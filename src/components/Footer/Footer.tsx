@@ -18,7 +18,6 @@ const useStyles = makeStyles(() =>
 			borderTop: "5px solid green !important",
 		},
 		footerParagraph: {
-			fontWeight: "bolder",
 			textAlign: "center",
 			color: "#fff",
 			margin: "0 !important",
